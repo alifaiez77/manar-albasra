@@ -135,9 +135,9 @@ b,strong{font-weight:700}
 .cart-count{position:absolute;top:-6px;left:-6px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;
   background:var(--steel);color:#fff;font-size:.72rem;font-weight:700;display:grid;place-items:center;
   border:1px solid #fff}
-.menu-toggle{display:none;flex-direction:column;gap:5px;width:42px;height:42px;border:none;border-radius:12px;
-  background:rgba(19,36,58,0.05);cursor:pointer;padding:0 11px}
-.menu-toggle span{height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+.menu-toggle{display:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  width:44px;height:44px;border:none;border-radius:12px;background:rgba(19,36,58,0.05);cursor:pointer;padding:0}
+.menu-toggle span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
 
 /* ============ التخطيط العام ============ */
 main{position:relative;z-index:1}
@@ -204,9 +204,10 @@ main{position:relative;z-index:1}
   border:1px solid var(--line);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
   box-shadow:var(--shadow);transition:transform .3s ease, border-color .3s ease}
 .card:hover{transform:translateY(-6px);border-color:rgba(247,148,29,0.6)}
-.card-media{position:relative;aspect-ratio:1/1;display:grid;place-items:center;padding:18px;
+.card-media{position:relative;height:200px;display:grid;place-items:center;padding:18px;
   background:radial-gradient(70% 70% at 50% 35%, rgba(42,134,201,0.10), transparent 70%)}
-.card-media img{max-height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 16px 22px rgba(19,40,80,.28));transition:transform .35s ease}
+.card-media img{height:160px;width:auto;max-width:100%;object-fit:contain;
+  filter:drop-shadow(0 16px 22px rgba(19,40,80,.28));transition:transform .35s ease}
 .card:hover .card-media img{transform:scale(1.06) translateY(-4px)}
 .badge{position:absolute;top:14px;right:14px;padding:6px 16px;border-radius:999px;font-size:.82rem;font-weight:700;
   color:#fff;border:none;box-shadow:0 8px 18px -8px rgba(19,40,80,.4)}
@@ -219,8 +220,9 @@ main{position:relative;z-index:1}
 .card-feat .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;
   background:linear-gradient(140deg,var(--flame),var(--ember))}
 .card-price-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px}
-.info-dot{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;flex-shrink:0;
-  border:1px solid var(--line);color:var(--ink-dim);background:rgba(19,36,58,0.02)}
+.info-dot{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;flex-shrink:0;cursor:pointer;
+  border:1px solid var(--line);color:var(--ink-dim);background:rgba(19,36,58,0.02);transition:.2s}
+.info-dot:hover{color:var(--flame);border-color:var(--flame);background:rgba(247,148,29,0.1)}
 .price{font-family:"Hurra Display";font-size:1.4rem;color:var(--amber-deep)}
 .price small{font-size:.72rem;color:var(--ink-dim);font-family:"Hurra Text"}
 .add-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;padding:12px;
@@ -315,6 +317,34 @@ main{position:relative;z-index:1}
 .cart-total strong{font-family:"Hurra Display";font-size:1.5rem;color:var(--amber-deep)}
 .cart-note{text-align:center;color:var(--ink-dim);font-size:.78rem;margin-top:10px}
 
+/* ============ نافذة تفاصيل المنتج ============ */
+.modal-overlay{position:fixed;inset:0;background:rgba(19,40,80,0.4);opacity:0;visibility:hidden;transition:.3s;z-index:80}
+.modal-overlay.open{opacity:1;visibility:visible}
+.modal{position:fixed;top:50%;left:50%;z-index:90;width:min(820px,calc(100% - 32px));max-height:90vh;overflow:auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:0;background:rgba(255,255,255,0.97);
+  -webkit-backdrop-filter:blur(26px);backdrop-filter:blur(26px);
+  transform:translate(-50%,-46%) scale(.96);opacity:0;visibility:hidden;transition:transform .3s cubic-bezier(.5,0,.2,1), opacity .3s}
+.modal.open{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1)}
+.modal-close{position:absolute;top:14px;left:14px;z-index:2;display:grid;place-items:center;width:40px;height:40px;
+  border-radius:12px;border:none;cursor:pointer;background:rgba(19,36,58,0.06);color:var(--ink)}
+.modal-close:hover{background:rgba(19,36,58,0.14)}
+.modal-media{position:relative;display:grid;place-items:center;padding:30px;min-height:280px;
+  background:radial-gradient(70% 70% at 50% 40%, rgba(42,134,201,0.12), transparent 72%)}
+.modal-media img{height:230px;width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 20px 28px rgba(19,40,80,.3))}
+.modal-info{padding:34px 34px 30px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.modal-info h3{font-size:1.9rem;color:var(--ink);line-height:1.2}
+.modal-desc{color:var(--ink-dim);font-size:.98rem;line-height:1.8}
+.modal-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:10px;flex-wrap:wrap}
+.modal-foot .price{font-size:1.8rem}
+@media(max-width:680px){
+  .modal{grid-template-columns:1fr;max-height:88vh}
+  .modal-media{min-height:200px;padding:24px}
+  .modal-media img{height:170px}
+  .modal-info{padding:22px}
+  .modal-info h3{font-size:1.45rem}
+  .modal-foot .btn{flex:1}
+}
+
 /* ============ ظهور تدريجي ============ */
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease, transform .8s ease}
 .reveal.in{opacity:1;transform:none}
@@ -353,7 +383,8 @@ main{position:relative;z-index:1}
   .card-feat{font-size:.76rem}
   .price{font-size:1.05rem}
   .add-btn{padding:10px;font-size:.86rem}
-  .card-media{padding:14px 12px 12px}
+  .card-media{padding:12px;height:150px}
+  .card-media img{height:118px}
   .badge{top:10px;right:10px;padding:4px 12px;font-size:.72rem}
 }
 

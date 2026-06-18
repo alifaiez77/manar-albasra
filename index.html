@@ -270,6 +270,28 @@
   </div>
 </aside>
 
+<!-- ====== نافذة تفاصيل المنتج ====== -->
+<div class="modal-overlay" id="modalOverlay"></div>
+<aside class="modal glass" id="productModal" role="dialog" aria-modal="true" aria-label="تفاصيل المنتج">
+  <button class="modal-close" id="modalClose" aria-label="إغلاق">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <div class="modal-media">
+    <span class="badge" id="mBadge"></span>
+    <img id="mImg" src="" alt="" />
+  </div>
+  <div class="modal-info">
+    <span class="card-tag" id="mTag"></span>
+    <h3 class="display" id="mName"></h3>
+    <div class="card-feat"><span class="dot"></span><span id="mFeat"></span></div>
+    <p class="modal-desc" id="mDesc"></p>
+    <div class="modal-foot">
+      <span class="price" id="mPrice"></span>
+      <button class="btn btn-primary" id="mAdd">أضف للسلة</button>
+    </div>
+  </div>
+</aside>
+
 <script src="assets/app.js"></script>
 </body>
 </html>

@@ -44,9 +44,9 @@ function renderProducts(filter="all"){
         <h3>${p.name}</h3>
         <div class="card-feat"><span class="dot"></span>${p.feat}</div>
         <div class="card-price-row">
-          <span class="info-dot">
+          <button class="info-dot" data-info="${p.id}" aria-label="تفاصيل ${p.name}">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
-          </span>
+          </button>
           <span class="price">${p.price.toLocaleString("en-US")} <small>د.ع</small></span>
         </div>
         <button class="add-btn" data-add="${p.id}" aria-label="أضف ${p.name} للسلة">
@@ -112,9 +112,42 @@ function addToCart(id){
 }
 
 grid.addEventListener("click", e => {
+  const info = e.target.closest("[data-info]");
+  if(info){ openModal(info.dataset.info); return; }
   const btn = e.target.closest("[data-add]");
   if(btn) addToCart(btn.dataset.add);
 });
+
+/* ============ نافذة تفاصيل المنتج ============ */
+const modal        = $("#productModal");
+const modalOverlay = $("#modalOverlay");
+let modalId = null;
+
+function openModal(id){
+  const p = PRODUCTS.find(x => x.id === id);
+  if(!p) return;
+  modalId = id;
+  $("#mImg").src = p.img;
+  $("#mImg").alt = p.name;
+  const badge = $("#mBadge");
+  badge.textContent = brandLabel(p.brand);
+  badge.className = "badge badge--" + p.brand;
+  $("#mTag").textContent  = p.tag;
+  $("#mName").textContent = p.name;
+  $("#mFeat").textContent = p.feat;
+  $("#mDesc").textContent =
+    `منتج أصلي مختوم من المصنع ومطابق لمواصفات API و SASO، بضمان منار البصرة. ` +
+    `يوفّر حماية ممتدّة للمحرك ويتحمّل ظروف التشغيل الحارّة والغبار في العراق. التوفّر يُؤكَّد مع فريق المبيعات.`;
+  $("#mPrice").innerHTML  = `${p.price.toLocaleString("en-US")} <small>د.ع</small>`;
+  modal.classList.add("open");
+  modalOverlay.classList.add("open");
+}
+function closeModal(){ modal.classList.remove("open"); modalOverlay.classList.remove("open"); modalId = null; }
+
+$("#modalClose").addEventListener("click", closeModal);
+modalOverlay.addEventListener("click", closeModal);
+$("#mAdd").addEventListener("click", () => { if(modalId){ addToCart(modalId); closeModal(); } });
+document.addEventListener("keydown", e => { if(e.key === "Escape") closeModal(); });
 
 itemsEl.addEventListener("click", e => {
   const inc = e.target.closest("[data-inc]");
