@@ -2,11 +2,11 @@
 .claude/
 node_modules/
 
-# نسخ مؤقتة من الخطوط في الجذر (تُستخدم نسخ assets/fonts)
-Al-Hurra-Txtreg-Bold.ttf
-AlHurraTxtlight.ttf
-AlHurraTxtreg.ttf
-Alhurra.ttf
+# نسخ مؤقتة من الخطوط في الجذر فقط (نسخ assets/fonts مرفوعة ومستخدمة)
+/Al-Hurra-Txtreg-Bold.ttf
+/AlHurraTxtlight.ttf
+/AlHurraTxtreg.ttf
+/Alhurra.ttf
 
 # ملفات النظام
 Thumbs.db

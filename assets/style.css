@@ -208,19 +208,27 @@ main{position:relative;z-index:1}
   background:radial-gradient(70% 70% at 50% 35%, rgba(42,134,201,0.10), transparent 70%)}
 .card-media img{max-height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 16px 22px rgba(19,40,80,.28));transition:transform .35s ease}
 .card:hover .card-media img{transform:scale(1.06) translateY(-4px)}
-.badge{position:absolute;top:12px;right:12px;padding:4px 11px;border-radius:999px;font-size:.74rem;font-weight:700;
-  background:var(--glass-strong);border:1px solid var(--line)}
-.badge--coral{color:#e0483a}
-.badge--shield{color:#b58a00}
-.card-body{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
-.card-body h3{font-size:1.08rem;line-height:1.35;color:var(--ink)}
-.card-spec{font-size:.84rem;color:var(--ink-dim)}
-.card-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:12px}
-.price{font-family:"Hurra Display";font-size:1.25rem;color:var(--amber-deep)}
-.price small{font-size:.7rem;color:var(--ink-dim);font-family:"Hurra Text"}
-.add-btn{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;cursor:pointer;
-  background:rgba(247,148,29,0.14);color:var(--amber-deep);border:1px solid rgba(247,148,29,0.4);transition:.2s}
-.add-btn:hover{background:linear-gradient(140deg,var(--flame),var(--ember));color:#fff}
+.badge{position:absolute;top:14px;right:14px;padding:6px 16px;border-radius:999px;font-size:.82rem;font-weight:700;
+  color:#fff;border:none;box-shadow:0 8px 18px -8px rgba(19,40,80,.4)}
+.badge--coral{background:linear-gradient(140deg,var(--flame),var(--ember))}
+.badge--shield{background:linear-gradient(140deg,#2a86c9,#1b4d8c)}
+.card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-tag{font-family:"Hurra Text";font-size:.82rem;font-weight:700;color:var(--ink-dim);letter-spacing:.3px}
+.card-body h3{font-family:"Hurra Display";font-size:1.18rem;line-height:1.3;color:var(--ink)}
+.card-feat{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--ink-dim)}
+.card-feat .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(140deg,var(--flame),var(--ember))}
+.card-price-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px}
+.info-dot{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  border:1px solid var(--line);color:var(--ink-dim);background:rgba(19,36,58,0.02)}
+.price{font-family:"Hurra Display";font-size:1.4rem;color:var(--amber-deep)}
+.price small{font-size:.72rem;color:var(--ink-dim);font-family:"Hurra Text"}
+.add-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;padding:12px;
+  border-radius:13px;cursor:pointer;border:none;font-family:inherit;font-weight:700;font-size:.98rem;color:#fff;
+  background:linear-gradient(140deg,var(--flame),var(--ember));
+  box-shadow:0 12px 24px -12px rgba(241,90,34,.6);transition:transform .2s ease, box-shadow .2s ease}
+.add-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -14px rgba(241,90,34,.75)}
+.add-btn svg{width:18px;height:18px}
 
 /* ============ الضمان ============ */
 .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:30px}
@@ -327,14 +335,24 @@ main{position:relative;z-index:1}
     opacity:0;visibility:hidden;transition:.3s;margin:0}
   .nav.open{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
   .nav a{padding:12px;text-align:center}
-  .menu-toggle{display:flex;margin-inline-start:auto}
-  .cart-toggle{order:3}
+  /* ترتيب البار: اللوغو يميناً، السلة ثم القائمة يساراً */
+  .brand{margin-inline-end:auto}
+  .brand img{height:38px}
+  .cart-toggle{margin-inline-start:0;order:2}
+  .menu-toggle{display:flex;order:3}
   .feature-grid{grid-template-columns:1fr}
 }
 @media(max-width:520px){
-  .product-grid{grid-template-columns:1fr}
-  .scene{padding:100px 16px 50px}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .scene{padding:100px 14px 50px}
   .hero h1{font-size:2.6rem}
+  .card-body{padding:12px 12px 14px;gap:5px}
+  .card-body h3{font-size:.92rem}
+  .card-tag{font-size:.68rem}
+  .card-feat{font-size:.76rem}
+  .price{font-size:1.05rem}
+  .add-btn{padding:10px;font-size:.86rem}
+  .card-media{padding:12px}
 }
 
 /* ====== تخفيف ازدحام الخلفية على الشاشات الصغيرة ====== */

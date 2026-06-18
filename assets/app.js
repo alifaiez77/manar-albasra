@@ -1,25 +1,25 @@
 /* ============ بيانات المنتجات ============ */
 const PRODUCTS = [
-  { id:"cr-hd50",  name:"كورال أويل HD-50",        brand:"coral",  cat:"engine", spec:"SAE HD-50 · API CI-4 · 5 لتر",      price:14000, img:"products/6-Yyv22gWWjRuGVKBJ.png" },
-  { id:"cr-15w40", name:"كورال أويل 15W-40",       brand:"coral",  cat:"engine", spec:"API CI4/SL تخليقي كامل · 5 لتر",     price:16500, img:"products/7-dJoNNQ93o5IWrazO.png" },
-  { id:"cr-20w50a",name:"كورال أويل 20W-50",       brand:"coral",  cat:"engine", spec:"أداء عالٍ · API SL/CF · 2 لتر",      price:7500,  img:"products/8-mxB8lGKNq7uBZPQL.png" },
-  { id:"cr-20w50b",name:"كورال أويل 20W-50",       brand:"coral",  cat:"engine", spec:"API SN/CF · 1 لتر",                  price:4500,  img:"products/9-Yle55KXkv7c47wE7.png" },
-  { id:"cr-5w20",  name:"كورال أويل 5W-20",        brand:"coral",  cat:"engine", spec:"API SP-GL6A تخليقي · 5 لتر",         price:21000, img:"products/11-A3QrrVKPKWTaKkrQ.png" },
-  { id:"cr-0w20",  name:"كورال أويل 0W-20",        brand:"coral",  cat:"engine", spec:"API SP-GL6A · حماية البرد · 5 لتر",  price:23500, img:"products/uuo--ossu-Yle56Xgzw5hl6rb7.png" },
-  { id:"cr-hyd",   name:"كورال هيدروليك HYD 68",   brand:"coral",  cat:"gear",   spec:"زيت هيدروليك أداء عالٍ · 20 لتر",    price:38000, img:"products/2-A0xrrzvZ6BFDLQKe.png" },
-  { id:"cr-brake", name:"كورال زيت مكابح DOT-3",   brand:"coral",  cat:"fluid",  spec:"Heavy Duty · 220 غم",               price:3500,  img:"products/10-mp877Kkx6Wiv4VqX.png" },
-  { id:"sh-strong",name:"شيلد سترونغ ألترا 15W-40",brand:"shield", cat:"engine", spec:"API CH-4 · تقنية عالمية · 5 لتر",    price:18000, img:"products/12-dOqNbabRewSy1L37.png" },
-  { id:"sh-react", name:"شيلد ريأكت 5W-20",        brand:"shield", cat:"engine", spec:"تخليقي · API SN · 5 لتر",           price:24000, img:"products/14-dWx0lv3R2nuqpBNl.png" },
-  { id:"sh-protect",name:"شيلد بروتكت 5W-30",      brand:"shield", cat:"engine", spec:"تخليقي كامل · API SN · 5 لتر",      price:25000, img:"products/15-YrDXaWv3JMtOZ9l4.png" },
-  { id:"sh-entity",name:"شيلد إنتيتي 10W-40",      brand:"shield", cat:"engine", spec:"تخليقي · API SN · 5 لتر",           price:22000, img:"products/16-AMqpn1Kx2Gt18k9W.png" },
-  { id:"sh-guard", name:"شيلد غارد SAE 50",        brand:"shield", cat:"engine", spec:"للشاحنات · API CF · 5 لتر",         price:17000, img:"products/17-AwvPr95J7jC7Ezqz.png" },
-  { id:"sh-prem5", name:"شيلد بريميوم 20W-50",     brand:"shield", cat:"engine", spec:"API SL · تقنية عالمية · 5 لتر",     price:16000, img:"products/18-d95rpnxWGgFok0n0.png" },
-  { id:"sh-plat5", name:"شيلد بلاتينيوم 10W-30",   brand:"shield", cat:"engine", spec:"API SL · 5 لتر",                    price:19000, img:"products/19-YanzBKPK61UgnvZ4.png" },
-  { id:"sh-plat1", name:"شيلد بلاتينيوم 10W-30",   brand:"shield", cat:"engine", spec:"API SL · 1 لتر",                    price:4500,  img:"products/21-Yle5MBja7pCD2xpk.png" },
-  { id:"sh-prem1", name:"شيلد بريميوم 20W-50",     brand:"shield", cat:"engine", spec:"API SL · 1 لتر",                    price:4000,  img:"products/22-mnl53OkajnuNNOOW.png" },
-  { id:"sh-marvel",name:"شيلد مارفل 0W-20",        brand:"shield", cat:"engine", spec:"تخليقي كامل · API SN · 5 لتر",      price:27000, img:"products/o-uuo-YrDX6kbMqgsOJKMk.png" },
-  { id:"sh-gear",  name:"شيلد كينيتيك جير SAE 90",brand:"shield", cat:"gear",   spec:"زيت تروس · API GL-5 · 4 لتر",       price:15000, img:"products/20-YZ9X2zDKl6H7jvOg.png" },
-  { id:"sh-atf",   name:"شيلد ATF ناقل أوتوماتيك", brand:"shield", cat:"fluid",  spec:"DX-III تخليقي · 1 لتر",             price:5000,  img:"products/23-YZ9X2z0ZEGTeQWEL.png" },
+  { id:"cr-hd50",  name:"كورال أويل HD-50",        brand:"coral",  cat:"engine", tag:"HD-50 · 5L",   feat:"مزيج تخليقي · API CI-4",  price:14000, img:"products/6-Yyv22gWWjRuGVKBJ.png" },
+  { id:"cr-15w40", name:"كورال أويل 15W-40",       brand:"coral",  cat:"engine", tag:"15W-40 · 5L",  feat:"تخليقي بالكامل",          price:16500, img:"products/7-dJoNNQ93o5IWrazO.png" },
+  { id:"cr-20w50a",name:"كورال أويل 20W-50",       brand:"coral",  cat:"engine", tag:"20W-50 · 2L",  feat:"أداء عالٍ · API SL/CF",   price:7500,  img:"products/8-mxB8lGKNq7uBZPQL.png" },
+  { id:"cr-20w50b",name:"كورال أويل 20W-50",       brand:"coral",  cat:"engine", tag:"20W-50 · 1L",  feat:"مزيج تخليقي · API SN",    price:4500,  img:"products/9-Yle55KXkv7c47wE7.png" },
+  { id:"cr-5w20",  name:"كورال أويل 5W-20",        brand:"coral",  cat:"engine", tag:"5W-20 · 5L",   feat:"تخليقي · API SP-GL6A",    price:21000, img:"products/11-A3QrrVKPKWTaKkrQ.png" },
+  { id:"cr-0w20",  name:"كورال أويل 0W-20",        brand:"coral",  cat:"engine", tag:"0W-20 · 5L",   feat:"حماية البرد · تخليقي",    price:23500, img:"products/uuo--ossu-Yle56Xgzw5hl6rb7.png" },
+  { id:"cr-hyd",   name:"كورال هيدروليك HYD 68",   brand:"coral",  cat:"gear",   tag:"HYD 68 · 20L", feat:"زيت هيدروليك أداء عالٍ",  price:38000, img:"products/2-A0xrrzvZ6BFDLQKe.png" },
+  { id:"cr-brake", name:"كورال زيت مكابح DOT-3",   brand:"coral",  cat:"fluid",  tag:"DOT-3 · 220غ", feat:"للخدمة الشاقة",          price:3500,  img:"products/10-mp877Kkx6Wiv4VqX.png" },
+  { id:"sh-strong",name:"شيلد سترونغ ألترا 15W-40",brand:"shield", cat:"engine", tag:"15W-40 · 5L",  feat:"ديزل شاق · API CH-4",     price:18000, img:"products/12-dOqNbabRewSy1L37.png" },
+  { id:"sh-react", name:"شيلد ريأكت 5W-20",        brand:"shield", cat:"engine", tag:"5W-20 · 5L",   feat:"تخليقي · API SN",         price:24000, img:"products/14-dWx0lv3R2nuqpBNl.png" },
+  { id:"sh-protect",name:"شيلد بروتكت 5W-30",      brand:"shield", cat:"engine", tag:"5W-30 · 5L",   feat:"تخليقي بالكامل",          price:25000, img:"products/15-YrDXaWv3JMtOZ9l4.png" },
+  { id:"sh-entity",name:"شيلد إنتيتي 10W-40",      brand:"shield", cat:"engine", tag:"10W-40 · 5L",  feat:"تخليقي · API SN",         price:22000, img:"products/16-AMqpn1Kx2Gt18k9W.png" },
+  { id:"sh-guard", name:"شيلد غارد SAE 50",        brand:"shield", cat:"engine", tag:"SAE 50 · 5L",  feat:"للشاحنات · API CF",       price:17000, img:"products/17-AwvPr95J7jC7Ezqz.png" },
+  { id:"sh-prem5", name:"شيلد بريميوم 20W-50",     brand:"shield", cat:"engine", tag:"20W-50 · 5L",  feat:"تقنية عالمية · API SL",   price:16000, img:"products/18-d95rpnxWGgFok0n0.png" },
+  { id:"sh-plat5", name:"شيلد بلاتينيوم 10W-30",   brand:"shield", cat:"engine", tag:"10W-30 · 5L",  feat:"حماية فائقة · API SL",    price:19000, img:"products/19-YanzBKPK61UgnvZ4.png" },
+  { id:"sh-plat1", name:"شيلد بلاتينيوم 10W-30",   brand:"shield", cat:"engine", tag:"10W-30 · 1L",  feat:"حماية فائقة · API SL",    price:4500,  img:"products/21-Yle5MBja7pCD2xpk.png" },
+  { id:"sh-prem1", name:"شيلد بريميوم 20W-50",     brand:"shield", cat:"engine", tag:"20W-50 · 1L",  feat:"تقنية عالمية · API SL",   price:4000,  img:"products/22-mnl53OkajnuNNOOW.png" },
+  { id:"sh-marvel",name:"شيلد مارفل 0W-20",        brand:"shield", cat:"engine", tag:"0W-20 · 5L",   feat:"تخليقي بالكامل",          price:27000, img:"products/o-uuo-YrDX6kbMqgsOJKMk.png" },
+  { id:"sh-gear",  name:"شيلد كينيتيك جير SAE 90", brand:"shield", cat:"gear",   tag:"SAE 90 · 4L",  feat:"زيت تروس · API GL-5",     price:15000, img:"products/20-YZ9X2zDKl6H7jvOg.png" },
+  { id:"sh-atf",   name:"شيلد ATF ناقل أوتوماتيك", brand:"shield", cat:"fluid",  tag:"ATF · 1L",     feat:"ناقل أوتوماتيك · DX-III", price:5000,  img:"products/23-YZ9X2z0ZEGTeQWEL.png" },
 ];
 
 const fmt = n => n.toLocaleString("en-US") + " د.ع";
@@ -28,7 +28,7 @@ const $$ = s => document.querySelectorAll(s);
 
 /* ============ عرض المتجر ============ */
 const grid = $("#productGrid");
-function brandLabel(b){ return b === "coral" ? "كورال" : "شيلد"; }
+function brandLabel(b){ return b === "coral" ? "Coral" : "Shield"; }
 
 function renderProducts(filter="all"){
   const list = PRODUCTS.filter(p =>
@@ -40,14 +40,19 @@ function renderProducts(filter="all"){
         <img src="${p.img}" alt="${p.name}" loading="lazy" />
       </div>
       <div class="card-body">
+        <span class="card-tag">${p.tag}</span>
         <h3>${p.name}</h3>
-        <p class="card-spec">${p.spec}</p>
-        <div class="card-foot">
+        <div class="card-feat"><span class="dot"></span>${p.feat}</div>
+        <div class="card-price-row">
+          <span class="info-dot">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          </span>
           <span class="price">${p.price.toLocaleString("en-US")} <small>د.ع</small></span>
-          <button class="add-btn" data-add="${p.id}" aria-label="أضف ${p.name}">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-          </button>
         </div>
+        <button class="add-btn" data-add="${p.id}" aria-label="أضف ${p.name} للسلة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          أضف للسلة
+        </button>
       </div>
     </article>`).join("");
 }
