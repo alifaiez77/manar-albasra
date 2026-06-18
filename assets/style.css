@@ -336,3 +336,14 @@ main{position:relative;z-index:1}
   .scene{padding:100px 16px 50px}
   .hero h1{font-size:2.6rem}
 }
+
+/* ====== تخفيف ازدحام الخلفية على الشاشات الصغيرة ====== */
+@media(max-width:860px){
+  /* إخفاء العبوات والقطع المتراكمة فوق النص */
+  .ds-engine2,.ds-engine3,.ds-barrel,.ds-can-a,.ds-can-b,.ds-can-c{display:none}
+  .ds-engine{opacity:.1;width:42vmin;right:-10vw;top:8vh}
+  .ds-dust{opacity:.22}
+  /* الإبقاء على علبة الزيت وسكبها كلمسة خلفية خفيفة فقط */
+  .oilrig{opacity:.45}
+  .oilcan-wrap{width:24vmin;left:1vw;top:0.5vh}
+}
